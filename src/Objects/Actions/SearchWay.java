@@ -51,16 +51,16 @@ public class SearchWay {
         }
         way.add(sortedNeighbors.get(indexSacrifice));
         for (int i = 0; i < way.get(0).getIteration(); i++) {
-            if (way.size() != way.get(0).getIteration() + 1) {
-                for (Cell cell : sortedNeighbors) {
-                    if (way.get(i).getIteration() - cell.getIteration() == 1) {
-                        if ((Math.abs(cell.getX() - way.get(i).getX()) == 4) || (Math.abs(cell.getX() - way.get(i).getX()) == 0)) {
-                            if ((Math.abs(cell.getY() - way.get(i).getY()) == 1) || (Math.abs(cell.getY() - way.get(i).getY()) == 0)) {
-                                way.add(cell);
-                                break;
-                            }
-                        }
-                    }
+            if (way.size() == way.get(0).getIteration() + 1) {
+                break;
+            }
+            for (Cell cell : sortedNeighbors) {
+                boolean iterationMatched = way.get(i).getIteration() - cell.getIteration() == 1;
+                boolean coordinateXMatched = (Math.abs(cell.getX() - way.get(i).getX()) == 4) || (Math.abs(cell.getX() - way.get(i).getX()) == 0);
+                boolean coordinateYMatched = (Math.abs(cell.getY() - way.get(i).getY()) == 1) || (Math.abs(cell.getY() - way.get(i).getY()) == 0);
+                if (iterationMatched && coordinateYMatched && coordinateXMatched) {
+                    way.add(cell);
+                    break;
                 }
             }
         }
