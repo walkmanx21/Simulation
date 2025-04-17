@@ -12,18 +12,21 @@ public class Renderer {
     public static void showMatrix() {
         System.out.print("\033[H\033[2J");
         System.out.println("\nWelcome to the simulation!\nA - rock, Т - tree, \" - grass, O - herbivore, X - predator.\n");
-        for (int i = 0; i < MATRIX.length; i++) {
-            for (int j = 0; j < MATRIX[i].length; j++) {
-                if (i == 0 || i == MATRIX.length - 1) {
-                    System.out.print(MATRIX[i][j]);
-                } else if (MATRIX[i][j] == '"') {
-                    System.out.print(GREEN + MATRIX[i][j] + RESET);
-                } else if (MATRIX[i][j] == 'O') {
-                    System.out.print(BLUE + MATRIX[i][j] + RESET);
-                } else if (MATRIX[i][j] == 'X') {
-                    System.out.print(RED + MATRIX[i][j] + RESET);
-                } else {
-                    System.out.print(MATRIX[i][j]);
+
+        for (char[] matrix : MATRIX) {
+            for (char ch : matrix) {
+                switch (ch) {
+                    case ('"'):
+                        System.out.print(GREEN + ch + RESET);
+                        break;
+                    case ('O'):
+                        System.out.print(BLUE + ch + RESET);
+                        break;
+                    case ('X'):
+                        System.out.print(RED + ch + RESET);
+                        break;
+                    default:
+                        System.out.print(ch);
                 }
             }
             System.out.println();
