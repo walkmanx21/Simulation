@@ -7,7 +7,6 @@ public abstract class Entity {
     private int x;
     private int y;
     private char symbol;
-//    private String name;
 
     public int getX() {
         return x;
@@ -28,14 +27,6 @@ public abstract class Entity {
     public char getSymbol() {
         return symbol;
     }
-
-//    public Entity(String name) {
-//        this.name = name;
-//    }
-//
-//    public String getName() {
-//        return name;
-//    }
 
     @Override
     public boolean equals(Object o) {
