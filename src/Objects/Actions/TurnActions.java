@@ -12,7 +12,7 @@ import static Objects.Renderer.showMatrix;
 
 public class TurnActions {
 
-    public void startSimulation(char[][] matrix, int predators, int herbivores, int rocks, int trees, int grasses, int time) throws InterruptedException {
+    public void startSimulation(int predators, int herbivores, int rocks, int trees, int grasses, int time) throws InterruptedException {
         createMatrix();
         setAllEntitiesInMatrix(predators, herbivores, rocks, trees, grasses);
         showMatrix();
@@ -21,7 +21,7 @@ public class TurnActions {
         LinkedList<String> survivingHerbivores = createList("herbivore", herbivores);
         int iteration = 0;
         while (!checkSurvivingEntities(survivingHerbivores)) {
-            nextTurn(matrix, predators, herbivores, grasses);
+            nextTurn(getMatrix(), predators, herbivores, grasses);
             pauseSimulation(time);
             iteration++;
         }

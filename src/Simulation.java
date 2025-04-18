@@ -11,6 +11,6 @@ public class Simulation extends Map {
 
     public static void main(String[] args) throws InterruptedException {
         TurnActions turnActions = new TurnActions();
-        turnActions.startSimulation(MATRIX, PREDATORS, HERBIVORES, ROCKS, TREES, GRASSES, TIME);
+        turnActions.startSimulation(PREDATORS, HERBIVORES, ROCKS, TREES, GRASSES, TIME);
     }
 }

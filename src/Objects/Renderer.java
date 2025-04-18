@@ -2,10 +2,11 @@ package Objects;
 
 import java.util.HashMap;
 
-import static Objects.Map.MATRIX;
+import static Objects.Map.getMatrix;
 
 public class Renderer {
 
+    private static final char[][] MATRIX = getMatrix();
     private static final String RESET = "\u001B[0m";
     private static final String GREEN = "\u001B[32m";
     private static final String BLUE = "\u001B[34m";

@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Set;
 
 import static Objects.Actions.SearchWay.waySearch;
-import static Objects.Map.MATRIX;
+import static Objects.Map.*;
 import static Objects.Map.getMap;
 
 public class Predator extends Creature {
@@ -35,12 +35,12 @@ public class Predator extends Creature {
                 x = way.get(0).getX();
                 y = way.get(0).getY();
             }
-        } while (MATRIX[y][x] == 'X');
+        } while (getMatrix()[y][x] == 'X');
         Set<String> keys = getMap().keySet();
         entity.setX(x);
         entity.setY(y);
         getMap().put(whoIsLookingKey, entity);
-        MATRIX[entity.getY()][entity.getX()] = entity.getSymbol();
+        getMatrix()[entity.getY()][entity.getX()] = entity.getSymbol();
         way.clear();
         for (String key : keys) {
             if (getMap().get(key).getX() == x && getMap().get(key).getY() == y && getMap().get(key).getSymbol() == sacrificeSymbol) {

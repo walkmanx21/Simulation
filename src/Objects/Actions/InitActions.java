@@ -3,8 +3,6 @@ package Objects.Actions;
 import Objects.Entity.*;
 
 import static Objects.Map.createEntityInMatrix;
-import static Objects.Map.createMatrix;
-import static Objects.Renderer.showMatrix;
 
 public class InitActions {
 

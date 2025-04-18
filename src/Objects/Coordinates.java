@@ -5,11 +5,12 @@ import Objects.Entity.Entity;
 import java.util.ArrayList;
 import java.util.Random;
 
-import static Objects.Map.MATRIX;
+import static Objects.Map.getMatrix;
 
 public class Coordinates {
 
     private static final Random random = new Random();
+    private static final char[][] MATRIX = getMatrix();
 
     public static void setCoordinates(Entity entity) {
         ArrayList<Integer> arrayX = createCoordinatesX();

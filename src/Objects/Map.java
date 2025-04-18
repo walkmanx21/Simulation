@@ -8,7 +8,7 @@ import static Objects.Coordinates.setCoordinates;
 
 public class Map {
 
-    public static final char[][] MATRIX = new char[17][69];
+    private static final char[][] MATRIX = new char[17][69];
     private static final HashMap<String, Entity> MAP = new HashMap<>();
 
     public static void createMatrix() {
@@ -50,6 +50,9 @@ public class Map {
 
     public static HashMap<String, Entity> getMap() {
         return MAP;
+    }
+    public static char[][] getMatrix() {
+        return MATRIX;
     }
 }
 

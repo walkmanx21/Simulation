@@ -7,13 +7,14 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashSet;
 
-import static Objects.Map.MATRIX;
+import static Objects.Map.*;
 
 public class SearchWay {
 
     private static final ArrayList<Cell> sortedNeighbors = new ArrayList<>();
     private static final HashSet<Cell> allNeighbors = new HashSet<>();
     private static ArrayList<Cell> way = new ArrayList<>();
+    public static final char[][] MATRIX = getMatrix();
 
     public static ArrayList<Cell> waySearch(Entity whoIsLooking, char sacrificeSymbol) {
         boolean found = false;
