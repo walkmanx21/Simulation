@@ -11,7 +11,7 @@ public class Renderer {
     private static final String BLUE = "\u001B[34m";
     private static final String RED = "\u001B[31m";
     private static final String NO_COLOR = "";
-    private static final HashMap<Character, String> color = new HashMap<>(){{
+    private static final HashMap<Character, String> COLOR = new HashMap<>(){{
         put('"', GREEN);
         put('O', BLUE);
         put('X', RED);
@@ -33,6 +33,6 @@ public class Renderer {
     }
 
     private static void printChar (char ch) {
-        System.out.print(color.get(ch) + ch + RESET);
+        System.out.print(COLOR.get(ch) + ch + RESET);
     }
 }
