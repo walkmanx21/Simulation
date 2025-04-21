@@ -2,10 +2,10 @@ package Objects.Entity;
 
 public class Grass extends Entity {
 
-    private char symbol = '"';
+    private static final char SYMBOL = '"';
 
     @Override
     public char getSymbol() {
-        return symbol;
+        return SYMBOL;
     }
 }

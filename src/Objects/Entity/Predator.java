@@ -8,14 +8,14 @@ import static Objects.Map.*;
 import static Objects.Map.getMap;
 
 public class Predator extends Creature {
-    private int attackPower = 100;
-    private int speed = 2;
-    private char symbol = 'X';
-    private char sacrificeSymbol = 'O';
+    private static final int ATTACK_POWER = 100;
+    private static final int SPEED = 2;
+    private static final char SYMBOL = 'X';
+    private static final char SACRIFICE_SYMBOL = 'O';
 
     @Override
     public char getSymbol() {
-        return symbol;
+        return SYMBOL;
     }
 
     public void makeMove(String whoIsLookingKey) {
@@ -24,11 +24,11 @@ public class Predator extends Creature {
         int x = 0;
         int y = 0;
         do {
-            way = waySearch(entity, sacrificeSymbol);
-            if (speed > 1 && way.size() > speed) {
-                x = way.get(speed - 1).getX();
-                y = way.get(speed - 1).getY();
-            } else if (speed > 1 && way.size() < speed) {
+            way = waySearch(entity, SACRIFICE_SYMBOL);
+            if (SPEED > 1 && way.size() > SPEED) {
+                x = way.get(SPEED - 1).getX();
+                y = way.get(SPEED - 1).getY();
+            } else if (SPEED > 1 && way.size() < SPEED) {
                 x = way.get(way.size() - 1).getX();
                 y = way.get(way.size() - 1).getY();
             } else {
@@ -43,10 +43,10 @@ public class Predator extends Creature {
         getMatrix()[entity.getY()][entity.getX()] = entity.getSymbol();
         way.clear();
         for (String key : keys) {
-            if (getMap().get(key).getX() == x && getMap().get(key).getY() == y && getMap().get(key).getSymbol() == sacrificeSymbol) {
+            if (getMap().get(key).getX() == x && getMap().get(key).getY() == y && getMap().get(key).getSymbol() == SACRIFICE_SYMBOL) {
                 Herbivore herbivore1 = (Herbivore) getMap().get(key);
                 int hp = herbivore1.getHp();
-                herbivore1.setHp(hp - attackPower);
+                herbivore1.setHp(hp - ATTACK_POWER);
                 if (herbivore1.getHp() != 0) {
                     break;
                 } else {

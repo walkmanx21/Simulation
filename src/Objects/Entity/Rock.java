@@ -2,11 +2,11 @@ package Objects.Entity;
 
 public class Rock extends Entity {
 
-    private char symbol = 'A';
+    private static final char SYMBOL = 'A';
 
     @Override
     public char getSymbol() {
-        return symbol;
+        return SYMBOL;
     }
 
 }
