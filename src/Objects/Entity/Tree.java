@@ -8,4 +8,7 @@ public class Tree extends Entity{
         return SYMBOL;
     }
 
+    public Tree(String name) {
+        super(name);
+    }
 }

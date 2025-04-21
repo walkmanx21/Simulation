@@ -12,6 +12,10 @@ public class Herbivore extends Creature {
     private static final char SYMBOL = 'O';
     private static final char SACRIFICE_SYMBOL = '"';
 
+    public Herbivore(String name) {
+        super(name);
+    }
+
     @Override
     public char getSymbol() {
         return SYMBOL;
@@ -26,7 +30,9 @@ public class Herbivore extends Creature {
     }
 
 
-    public void makeMove(String whoIsLookingKey) {
+    @Override
+    public void makeMove() {
+        String whoIsLookingKey = getName();
         Entity entity = getMap().get(whoIsLookingKey);
         ArrayList<Cell> way;
         int x = 0;

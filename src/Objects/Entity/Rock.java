@@ -9,4 +9,7 @@ public class Rock extends Entity {
         return SYMBOL;
     }
 
+    public Rock(String name) {
+        super(name);
+    }
 }

@@ -13,12 +13,18 @@ public class Predator extends Creature {
     private static final char SYMBOL = 'X';
     private static final char SACRIFICE_SYMBOL = 'O';
 
+    public Predator(String name) {
+        super(name);
+    }
+
     @Override
     public char getSymbol() {
         return SYMBOL;
     }
 
-    public void makeMove(String whoIsLookingKey) {
+    @Override
+    public void makeMove() {
+        String whoIsLookingKey = getName();
         Entity entity = getMap().get(whoIsLookingKey);
         ArrayList<Cell> way;
         int x = 0;

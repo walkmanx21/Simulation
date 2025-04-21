@@ -8,4 +8,8 @@ public class Grass extends Entity {
     public char getSymbol() {
         return SYMBOL;
     }
+
+    public Grass(String name) {
+        super(name);
+    }
 }

@@ -25,15 +25,15 @@ public class Map {
         }
     }
 
-    public static void createEntityInMatrix(Entity entity, String type) {
+    public static void createEntityInMatrix(Entity entity) {
         setCoordinates(entity);
         if (MAP.isEmpty()) {
-            MAP.put(type, entity);
+            MAP.put(entity.getName(), entity);
         } else {
             do {
                 setCoordinates(entity);
             } while (MATRIX[entity.getY()][entity.getX()] != ' ');
-            MAP.put(type, entity);
+            MAP.put(entity.getName(), entity);
         }
         MATRIX[entity.getY()][entity.getX()] = entity.getSymbol();
     }

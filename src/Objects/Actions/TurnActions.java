@@ -35,7 +35,7 @@ public class TurnActions {
         LinkedList<String> grass = survivingEntities(grasses, "grass");
         if (grass.size() <= 7) {
             for (int i = 0; i < grasses; i++) {
-                createEntityInMatrix(new Grass(), "grass" + i);
+                createEntityInMatrix(new Grass("grass" + i));
                 grass.add("grass" + i);
             }
         }
@@ -84,13 +84,13 @@ public class TurnActions {
     private void massMakeMove(int entities, String type) {
         LinkedList<String> entities1 = survivingEntities(entities, type);
         for (String key : entities1) {
-            if (type.contains("herbivore")) {
+            if (key.contains("herbivore")) {
                 Herbivore herbivore1 = (Herbivore) getMap().get(key);
-                herbivore1.makeMove(key);
+                herbivore1.makeMove();
             }
-            if (type.contains("predator")) {
+            if (key.contains("predator")) {
                 Predator predator1 = (Predator) getMap().get(key);
-                predator1.makeMove(key);
+                predator1.makeMove();
             }
         }
     }
